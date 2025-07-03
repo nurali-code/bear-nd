@@ -1,0 +1,154 @@
+.header
+    top: 0
+    left: 0
+    width: 100%
+    padding: 32px 66px
+    position: absolute
+    z-index: 99999
+    .btn__menu
+        display: none
+        position: relative
+        z-index: 10
+        opacity: 1 !important
+
+    .nav
+        &__link
+            padding: 15px
+            font-family: Raleway
+            font-weight: 400
+            font-style: Regular
+            font-size: 14px
+            leading-trim: CAP_HEIGHT
+            line-height: 100%
+            &:hover
+                opacity: 1
+                color: $prime
+
+        .header 
+            &-contacts 
+                display: none
+    
+        &-contacts 
+            &__link 
+                font-family: 'Philosopher', serif
+
+    @media (max-width: 1500px)
+        padding: 24px 16px
+        .nav
+            gap: 30px
+
+    @media (max-width: 1100px)
+        padding: 12px 6px
+        .btn__menu
+            display: block
+            width: 32px
+            height: 32px
+            position: relative
+            &::before,
+            &::after
+                content: ''
+                transition: all .3s ease
+                display: block
+                margin: 0 auto
+                height: 3px
+                width: 30px
+                position: absolute
+                top: calc(50% - 4.5px)
+                right: 0
+                transform: translateY(-50%)
+                border-radius: 5px
+                background-color: $black
+
+            &::after
+                top: calc(50% + 4.5px)
+
+            &.tab_active
+                &::before,
+                &::after
+                    top: 50%
+                    transform: translateY(-50%) rotate(45deg)
+
+                &::after
+                    width: 30px
+                    transform: translateY(-50%) rotate(-45deg)
+
+        .nav
+            position: absolute
+            z-index: 11
+            transition: all .3s ease
+            width: 100%
+            top: 100%
+            right: 0
+            text-align: center
+            background-color: #fff
+            opacity: 0
+            overflow: hidden
+            height: calc( 100svh - 56px )
+            visibility: hidden
+            transform: translateY(20%)
+            display: block
+            padding: 50px 20px
+            &::before
+                content: ''
+                display: block
+                width: 100%
+                min-width: 733px
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                z-index: -11
+                height: 50%
+                background-repeat: no-repeat
+                background-position: center bottom
+                background-image: url('../img/menu__bg.jpg')
+                pointer-events: none
+                opacity: 0
+                transition: .3s ease all
+                transform: translateY(50px) translateX(-50%)
+
+            &__link
+                display: block
+                font-size: 24px
+                padding: 30px 0
+                line-height: 100%
+
+                opacity: 0
+                transform: translateY(100%)
+
+            &.tab_active
+                opacity: 1
+                visibility: visible
+                transform: translateY(0)
+                &::before
+                    opacity: 1
+                    transform: translateY(0px) translateX(-50%)
+                    transition-delay: .6s
+
+                .nav__link
+                    opacity: 1
+                    transform: translateY(0px)
+                    &:nth-child(1)
+                        transition-delay: .2s
+                    &:nth-child(2)
+                        transition-delay: .3s
+                    &:nth-child(3)
+                        transition-delay: .4s
+                    &:nth-child(4)
+                        transition-delay: .5s
+
+    @media (max-width: 720px)
+
+.logo
+    display: block
+    position: relative
+    z-index: 100
+    max-width: 206px
+    img
+        width: 100%
+
+    @media (max-width: 1500px)
+        max-width: 166px
+
+    @media (max-width: 1100px)
+        max-width: 124px
