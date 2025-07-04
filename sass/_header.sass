@@ -25,7 +25,7 @@
 
         .header
             &-contacts
-                @media (min-width: 1199.99px)
+                @media (min-width: 1200px)
                     display: none
 
     &-contacts
@@ -37,8 +37,8 @@
             font-size: 16px
             line-height: 100%
 
-    @media (max-width: 1199.99px)
-        padding: 12px 6px
+    @media (max-width: 1199px)
+        // padding: 12px 6px
         .btn__menu
             display: block
             width: 30px
@@ -71,10 +71,10 @@
                     &::before,
                     &::after
                         top: 50%
-                        transform: rotate(-45deg) 
+                        transform: rotate(-45deg)
 
                     &::after
-                        transform: rotate(45deg) 
+                        transform: rotate(45deg)
 
         .nav
             position: absolute
@@ -135,6 +135,22 @@
             margin: 0 34px 0 auto
 
     @media (max-width: 720px)
+        padding: 0 !important
+
+        &-contacts
+            &__link 
+                font-size: 14px
+
+    @media (max-width: 350px)
+        &-contacts
+            margin-right: 22px
+            &__link 
+                font-size: 12px
+                .ic 
+                    --ic-width: 14px
+
+    
+
 
 .logo
     display: block
@@ -144,8 +160,6 @@
     img
         width: 100%
 
-    @media (max-width: 1500px)
-        max-width: 166px
 
-    @media (max-width: 1100px)
-        max-width: 124px
+    @media (max-width: 720px)
+        max-width: 84px

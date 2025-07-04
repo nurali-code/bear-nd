@@ -59,16 +59,89 @@
         object-fit: cover
         opacity: .5
 
-    @media (max-width: 1199.99px)
+    @media (max-width: 1199px)
+        .container
+            align-items: flex-end
+
         &-features
+            margin-bottom: 10vw
+            gap: 40px
             max-width: 40%
 
+        &-feature
+            &__heading
+                font-size: 50px
+            &__text
+                font-size: 22px
+
         &-descr
+            margin-bottom: 10vw
             max-width: 50%
-        
 
+        h1
+            max-width: 980px
 
+    @media (max-width: 991px)
+        .container
+            gap: 56px 0
+            flex-direction: column
+            &>*
+                width: 100%
+                max-width: 100%
+                text-align: left
 
+        .header
+            order: 1
+
+        &__bg
+            // object-position: right center
+
+        &-features
+            order: 2
+            margin-bottom: 0
+            gap: 20px 40px
+
+        &-feature
+            &__heading
+                font-size: 40px
+            &__text
+                font-size: 18px
+
+        h1
+            order: 3
+            margin: 0
+
+        &-descr
+            margin: auto
+            order: 4
+            margin-bottom: 0
+            .btn
+                margin-left: 0
+
+    @media (max-width: 720px)
+        .container
+            width: calc( 100% - 18px )
+            min-height: 590px
+            
+
+            &>*
+                padding: 0 11px
+
+        &-feature
+            &__heading
+                font-size: 28px
+
+            &__text
+                font-size: 12px
+
+        &-descr
+            p
+                font-size: 12px
+                line-height: 16px
+                margin-bottom: 30px
+
+            .btn
+                width: 100%
 
 .faq
     &__text
