@@ -17,45 +17,79 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container fx-ac fx-jb">
-            <a href="#" class="logo"><img src="img/bear-logo.png" alt="bear logo"></a>
-            <nav class="nav fx-ac">
-                <a href="#how" class="nav__link">Услуги</a>
-                <a href="#how" class="nav__link">Франшиза</a>
-                <a href="#how" class="nav__link">Документы для обращения</a>
-                <a href="#how" class="nav__link">Аварийный комиссар</a>
-                <a href="#how" class="nav__link">Зарабатывай с нами</a>
-
-                <div class="header-contacts fx-col">
-                    <a href="#" class="header-contacts__link fx-ac">
-                        <i class="ic-pin"></i>
-                        <span>Хабаровск, Красина 5</span>
-                    </a>
-                    <a href="tel:89243040088" class="header-contacts__link fx-ac">
-                        <i class="ic-pin"></i>
-                        <span>8 924 304 0088</span>
-                    </a>
-                </div>
-            </nav>
-            <div class="header-contacts fx-col">
-                <a href="#" class="header-contacts__link fx-ac">
-                    <i class="ic-pin"></i>
-                    <span>Хабаровск, Красина 5</span>
-                </a>
-                <a href="tel:89243040088" class="header-contacts__link fx-ac">
-                    <i class="ic-pin"></i>
-                    <span>8 924 304 0088</span>
-                </a>
-            </div>
-            <button class="btn__menu" aria-label="Меню"></button>
-        </div>
-    </header>
 
     <main>
         <section class="hero">
-            <div class="container">
+            <div class="container fx-w fx-as fx-jb">
+                <header class="header fx-ac fx-jb">
+                    <a href="#" class="logo"><img src="img/bear-logo.png" alt="bear logo"></a>
+                    <nav class="nav fx-ac">
+                        <a href="#how" class="nav__link">Услуги</a>
+                        <a href="#how" class="nav__link">Франшиза</a>
+                        <a href="#how" class="nav__link">Документы для обращения</a>
+                        <a href="#how" class="nav__link">Аварийный комиссар</a>
+                        <a href="#how" class="nav__link">Зарабатывай с нами</a>
+
+                        <div class="header-contacts fx-col">
+                            <a href="#" class="header-contacts__link fx-ac">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#pin"></use>
+                                </svg>
+                                <span>Хабаровск, Красина 5</span>
+                            </a>
+                            <a href="tel:89243040088" class="header-contacts__link fx-ac">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#call"></use>
+                                </svg>
+                                <span>8 924 304 0088</span>
+                            </a>
+                        </div>
+                    </nav>
+                    <div class="header-contacts fx-col">
+                        <a href="#" class="header-contacts__link fx-ac">
+                            <svg class="ic">
+                                <use href="img/sprite.svg#pin"></use>
+                            </svg>
+                            <span>Хабаровск, Красина 5</span>
+                        </a>
+                        <a href="tel:89243040088" class="header-contacts__link fx-ac">
+                            <svg class="ic">
+                                <use href="img/sprite.svg#call"></use>
+                            </svg>
+                            <span>8 924 304 0088</span>
+                        </a>
+                    </div>
+                    <button class="btn__menu" aria-label="Меню"><span></span></button>
+                </header>
+
+                <div class="hero-features fx-ac fx-w">
+                    <p class="hero-feature">
+                      <strong class="hero-feature__heading">90 000+</strong>  
+                      <span class="hero-feature__text">клиентов компании</span>
+                    </p>
+                    <p class="hero-feature">
+                      <strong class="hero-feature__heading">c 2012 года</strong>  
+                      <span class="hero-feature__text">оказываем услуги</span>
+                    </p>
+                </div>
+
+                <div class="hero-descr">
+                    <p class="--lg">
+                        Полностью берем на себя работу со страховыми компаниями и представительство в суде. Взыскиваем со страховой БЕЗ ИЗНОСА на РЕКВИЗИТЫ КЛИЕНТА.
+                    </p>
+                    <a href="#" class="btn" target="_blank">
+                        <svg class="ic"><use href="img/sprite.svg#whatsapp"></use></svg>
+                        <span>Бесплатная консультация</span>
+                        <svg class="ic --arrow"><use href="img/sprite.svg#arrow_right"></use></svg>
+                    </a>
+                </div>
+
+
+                <h1>
+                    НАША ЗАДАЧА - НЕ “НАГНУТЬ” ИНСПЕКТОРА ГАИ ИЛИ СТРАХОВЩИКА, А “ВЫПРЯМИТЬ” ВОДИТЕЛЯ!
+                </h1>
             </div>
+
             <img src="img/main-bg.jpg" alt="bg" class="hero__bg">
         </section>
 

@@ -6,9 +6,50 @@
 .hero
     position: relative
     z-index: 1
-    min-height: 100svh
+    padding: 0
     background-color: #0D0804
-    &__bg 
+    .container
+        gap: 90px 20px
+        padding-top: 22px
+        padding-bottom: 22px
+        min-height: calc( 100svh - 40px )
+
+    .header
+        margin-bottom: auto
+
+    &-features
+        gap: 78px
+        max-width: 59%
+
+    &-feature
+        white-space: nowrap
+        &__heading
+            display: block
+            font-family: 'Philosopher', serif
+            font-weight: 700
+            font-size: 60px
+            line-height: 100%
+            text-transform: uppercase
+
+        &__text
+            font-weight: 600
+            font-size: 24px
+            line-height: 100%
+
+    &-descr
+        max-width: 41%
+        text-align: right
+        p
+            margin-bottom: 20px
+
+        .btn
+            margin-left: auto
+
+    h1
+        max-width: 1149px
+        margin: auto 0 0
+
+    &__bg
         position: absolute
         top: 0
         left: 0
@@ -17,6 +58,17 @@
         z-index: -11
         object-fit: cover
         opacity: .5
+
+    @media (max-width: 1199.99px)
+        &-features
+            max-width: 40%
+
+        &-descr
+            max-width: 50%
+        
+
+
+
 
 .faq
     &__text
