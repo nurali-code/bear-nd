@@ -16,10 +16,12 @@
     --bg: #111111
     --fz: 1.25rem
     --cont: 1320px
+    --cont-pad: 20px
+    --padd: 20px
 
 $alfa: rgba(0, 0, 0, 0)
 $prime: var(--prime)
-$prime-2: var(--prime-2)
+$main: var(--main)
 $black: var(--black)
 $dark: rgb(var(--dark))
 $white: var(--white)
@@ -42,23 +44,22 @@ body, html
             overflow: hidden
 
 body
-    padding: 20px
     min-height: 100vh
     position: relative
     z-index: 1
-    &.is_active
+    &.active
         overflow: hidden
 
 .container
     max-width: var(--cont)
-    width: calc( 100% - 40px )
+    width: calc( 100% - var(--cont-pad) * 2 )
     margin: 0 auto
 
 img
     display: block
     max-width: 100%
 
-h1, h2, h3, h4, h5, h6
+h1, h2
     font-family: 'Philosopher', sans
     font-weight: 700
     margin: 0 0 20px
@@ -66,8 +67,8 @@ h1, h2, h3, h4, h5, h6
 h3,.h3
     font-weight: 600
     font-size: 28px
-    leading-trim: NONE
-    line-height: 32px
+    line-height: 115%
+    margin: 0 0 20px
 
 h1,.h1
     font-weight: 700
@@ -78,11 +79,10 @@ h1,.h1
 h2,.h2
     font-weight: 700
     font-size: 40px
-    leading-trim: NONE
     line-height: 100%
+    color: $prime
     text-transform: uppercase
-
-    margin-bottom: 80px
+    margin: 0 0 45px
 
 a, button, p, ul, ol
     font-family: inherit
@@ -163,7 +163,7 @@ button
 ul
     list-style: none
 
-[class^=fx-], [class*=" fx-"], .btn, body, .fx
+[class^=fx-], [class*=" fx-"], .btn, body, .fx, .wrapper
     display: flex
 
 .fx-col, body
@@ -172,23 +172,38 @@ ul
 .fx-ac, .btn
     align-items: center
 
+.fx-as, .wrapper
+    align-items: flex-start
+
 .fx
     &-jc
         justify-content: center
+
     &-je
         justify-content: flex-end
 
     &-w
         flex-wrap: wrap
 
-    &-as
-        align-items: flex-start
-
     &-jb
         justify-content: space-between
 
     &-ae
         align-items: end
+
+.wrapper
+    --gap: 63px
+    --first: 242px
+    gap: var(--gap)
+    &__img
+        width: 100%
+        object-fit: cover
+    &>*
+        &:first-child
+            width: var(--first)
+
+        &:last-child
+            width: calc( 100% - (var(--first) + var(--gap) ))
 
 label
     display: block
@@ -231,31 +246,71 @@ input
 
 section
     overflow: hidden
-    padding: 120px 0
-    @media screen and ( max-width: 1500px )
-        padding: 105px 0
+    padding: 50px 0
+    @media screen and ( max-width: 1199px )
+        padding: 40px 0
     @media screen and ( max-width: 992px )
-        padding: 95px 0
-    @media screen and ( max-width: 720px )
-        padding: 80px 0
+        padding: 30px 0
+
+@media screen and ( max-width: 1439px )
+    :root
+        --fz: 1rem
+        --cont: 1260px
+        --padd: 10px
 
 @media screen and ( max-width: 1199px )
     h1,.h1
         font-size: 50px
 
+    h2,.h2
+        font-size: 30px
+        margin-bottom: 35px
+
+    h3,.h3
+        font-size: 22px
+
+    .wrapper
+        --gap: 53px
+
 @media screen and ( max-width: 991px )
     :root
-        --fz: 1rem
-
-    body
-        padding: 10px
+        --padd: 0px
 
     h1,.h1
         font-size: 40px
 
+    h2,.h2
+        font-size: 30px
+        margin-bottom: 25px
+
+    h3,.h3
+        font-size: 18px
+
+    .wrapper
+        --first: 200px
+        --gap: 40px
+        &>*
+            &:first-child
+
 @media screen and ( max-width: 720px )
-    body
-        padding: 0
+    .wrapper
+        display: block
+        &>*
+            width: 100% !important
+
+        &__img
+            display: none
+
+    p 
+        font-size: 12px
+        line-height: 15px
 
     h1,.h1
         font-size: 25px
+
+    h2,.h2
+        margin-bottom: 20px
+        font-size: 24px
+
+    h3,.h3
+        font-size: 16px

@@ -31,86 +31,32 @@ scrollChatToBottom();
 
 // FAQ аккордеон
 $('.faq__heading').on('click', function () {
-    const parent = $(this).closest('.faq-item');
+    $('.faq__heading').not(this).find('.ic use').attr('href', 'img/sprite.svg#inc');
     $('.faq__heading').not(this).removeClass('active').next().slideUp(300);
+    $(this).find('.ic use').attr('href', 'img/sprite.svg#dec');
     $(this).toggleClass('active').next().slideToggle(300);
-    setTimeout(() => { $('.faq-item').not(parent).removeClass('active'); }, 300);
-    parent.toggleClass('active');
+
 });
 
-$('.live__slider').slick({
-    dots: false,
+$('.reviews-slider').slick({
     arrows: false,
     infinite: false,
-    cennterPadding: '0',
     speed: 300,
-    slidesToShow: 2,
-    asNavFor: '.live__navbar',
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 720,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-    ]
-});
-$('.live__navbar').slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300,
-    centerMode: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    cennterPadding: '0px',
-    variableWidth: true,
-    asNavFor: '.live__slider',
-    focusOnSelect: true,
-    responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                adaptiveHeight: true
-            }
-        },
-    ]
-});
-$('.reviews__slider').slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300,
-    centerMode: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     swipeToSlide: true,
-    cennterPadding: '14px',
+    cennterPadding: '0',
     variableWidth: true,
     responsive: [
         {
-            breakpoint: 1600,
+            breakpoint: 1400,
             settings: {
-                variableWidth: false,
-                cennterPadding: '20px',
-                slidesToShow: 3,
-            }
-        },
-        {
-            breakpoint: 1200,
-            settings: {
-                variableWidth: false,
                 slidesToShow: 2,
             }
         },
         {
             breakpoint: 720,
             settings: {
-                variableWidth: false,
                 slidesToShow: 1,
             }
         },

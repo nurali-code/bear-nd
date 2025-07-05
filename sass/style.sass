@@ -6,13 +6,13 @@
 .hero
     position: relative
     z-index: 1
-    padding: 0
-    background-color: #0D0804
+    padding: var(--padd)
+    margin: 0 0 50px
     .container
         gap: 90px 20px
         padding-top: 22px
         padding-bottom: 22px
-        min-height: calc( 100svh - 40px )
+        min-height: calc( 100svh - var(--padd) * 2 )
 
     .header
         margin-bottom: auto
@@ -20,6 +20,7 @@
     &-features
         gap: 78px
         max-width: 59%
+        margin-bottom: 5vw
 
     &-feature
         white-space: nowrap
@@ -39,6 +40,7 @@
     &-descr
         max-width: 41%
         text-align: right
+        margin-bottom: 5vw
         p
             margin-bottom: 20px
 
@@ -49,15 +51,29 @@
         max-width: 1149px
         margin: auto 0 0
 
-    &__bg
+    &__bg,
+    &::before
+        content: ''
+        display: block
         position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        z-index: -11
+        top: var(--padd)
+        z-index: -111
+        left: var(--padd)
+        width: calc( 100% - var(--padd) * 2 )
+        height: calc( 100% - var(--padd) * 2 )
+
+    &::before
+        background-color: #0D0804
+
+    &__bg
+        z-index: -1
         object-fit: cover
         opacity: .5
+
+    @media (max-width: 1439px)
+        &-features,
+        &-descr
+            margin-bottom: 0
 
     @media (max-width: 1199px)
         .container
@@ -119,10 +135,10 @@
                 margin-left: 0
 
     @media (max-width: 720px)
+        margin-bottom: 70px
         .container
             width: calc( 100% - 18px )
             min-height: 590px
-            
 
             &>*
                 padding: 0 11px
@@ -143,6 +159,79 @@
             .btn
                 width: 100%
 
+.about
+    h3
+        max-width: 590px
+        font-weight: 400
+
+    .wrapper
+        &>*
+            &:last-child
+                max-width: 670px
+
+.reviews
+    &-title
+        gap: 2px 20px
+        margin-bottom: 20px
+        &>*
+            margin: 0
+
+    h2
+        color: $white
+
+    h3
+        color: $prime
+
+    &-slider
+        width: calc((100vw - var(--cont)) / 2 + 100%)
+        &:not(.slick-initialized)
+            gap: 10px
+            &>*:nth-child(n+4)
+                display: none
+
+    &-slide
+        width: 316px
+        border: 1px solid white
+        padding: 30px
+        margin: 0 5px
+        &>*
+            width: 100%
+
+        &:nth-child(even)
+            border: none
+            background-color: $main
+
+    &__text
+        margin: 0 0 10px
+
+    &__name
+        font-weight: bold
+
+    @media screen and ( max-width: 1300px )
+        &-slider
+            width: calc(100% + var(--cont-pad) )
+
+    @media screen and ( max-width: 991px )
+
+        &-slide
+            // width: 208px
+            padding: 21px 19px
+
+    @media screen and ( max-width: 720px )
+        &-slide
+            margin: 0 3.5px
+            width: 60vw
+            max-width: 300px
+
+        &-slider
+            position: relative
+            z-index: 1
+            left: calc( 0px - var(--cont-pad) )
+            width: calc(100% + var(--cont-pad) * 2 )
+            .slick
+                &-list
+                    padding: 0 calc( var(--cont-pad) - 3.5px )
+
 .faq
     &__text
         display: none
@@ -150,63 +239,73 @@
 
     &-item
         transition: all ease .3s
-        margin: 0 auto 10px
+        margin: 0 auto
         padding: 0
+        border-bottom: 1px solid #BEBEBE
+
+        .ic
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            --ic-width: 26px
+
         &:last-child
             margin-bottom: 0
 
         &.active
-            border-radius: 20px 60px 20px 20px
-            .faq__text
-                display: block
+
+    &__text
+        padding-left: 60px
 
     &__heading
+        padding: 20px 0 20px 60px
         position: relative
         z-index: 1
-        padding: 24px 0 24px 60px
         margin: 0
         width: 100%
         text-align: left
-        text-wrap: stable
+        text-wrap: balance
         cursor: pointer
-        &::before
-            content: '+'
-            text-align: center
-            width: 40px
-            height: 40px
-            font-size: 50px
-            line-height: 40px
-            display: block
-            font-weight: normal
-            position: absolute
-            top: 50%
-            left: 0
-            transform: translateY(-50%)
-            transition: all ease .3s
-            transform-origin: 50% 0%
 
         &.active
             color: $prime
             opacity: 1
-            &:before
-                content: '-'
 
-    @media screen and ( max-width: 992px )
-
-        &-item
-            padding: 12px 12px 12px 24px
-            border-radius: 36px
-            &.active
-                border-radius: 12px 36px 12px 12px
+    @media screen and ( max-width: 1199px )
+        &__heading
+            padding: 18px 0 18px 40px
+            .ic
+                --ic-width: 20px
 
         &__text
-            padding-bottom: 0
-
+            padding-left: 40px
+    @media screen and ( max-width: 720px )
         &__heading
-            padding: 7px 45px 7px 0
-            line-height: 130%
-            &::after
-                width: 40px
-                height: 40px
+            padding: 11.5px 0 11.5px 27px
+            .ic
+                --ic-width: 15px
+        &__text
+            padding-left: 27px
+
+.franchise
+    position: relative
+    z-index: 1
+    padding: 
+    &__bg,
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: var(--padd)
+        z-index: -111
+        left: var(--padd)
+        width: calc( 100% - var(--padd) * 2 )
+        height: calc( 100% - var(--padd) * 2 )
+
+    &__bg
+        z-index: -1
+        object-fit: cover
+        opacity: .5
 
 @import 'footer'

@@ -3,13 +3,15 @@
 .slick
     &-list
         position: relative
-        overflow: hidden
-        display: block
+        // overflow: hidden
+        display: flex
+        
         margin: 0
         padding: 0
 
         &:focus
             outline: none
+
         &.dragging
             cursor: pointer
             cursor: hand
@@ -41,7 +43,7 @@
         left: 0
         top: 0
         // height: 100%
-        display: block
+        display: flex
         margin-left: auto
         margin-right: auto
 
@@ -72,19 +74,15 @@
         &.slick-loading img
             display: none
 
-            display: none
 
         &.dragging img
             pointer-events: none
-
-        .slick-initialized &
-            display: block
 
         .slick-loading &
             visibility: hidden
 
         .slick-vertical &
-            display: block
+            // display: block
             height: auto
 
     &-arrow.slick-hidden
@@ -92,39 +90,4 @@
 
     &-arrow
         color: rgba(0, 0, 0, 0)
-
-    &-dots
-        display: flex
-        width: fit-content
-        background-color: #F4F4F5
-        align-items: center
-        justify-content: center
-        padding: 12px 8px
-        gap: 12px
-        border-radius: 40px
-        margin: 20px auto 0
-        li
-            padding: 0 3.5px
-            line-height: 0
-
-        button
-            width: 8px
-            height: 8px
-            font-size: 0
-            border-radius: 50%
-            background-color: $prime
-            opacity: .4
-            color: rgba(0, 0, 0, 0)
-
-        .slick-active button
-            opacity: 1
-            transform: scale(2)
-
-    &-disabled
-        cursor: no-drop
-        border: 3px solid var(--white)
-        pointer-events: none
-        &::after
-            opacity: 0
-
         
