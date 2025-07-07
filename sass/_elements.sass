@@ -154,12 +154,23 @@ button
         .--arrow
             transform: scaleX(-1)
 
+    &.--outline
+        background-color: $black
+        color: $white
+        .ic
+            fill: $white
+        &:active,
+        &:hover
+            color: $prime
+            .ic
+                fill: $prime
+
     &.--white-out
         &:active,
         &:hover
             background-color: $black
             color: $prime
-            .ic 
+            .ic
                 fill: $prime
 
     &:disabled
@@ -325,4 +336,7 @@ section
         font-size: 16px
 
     .btn
+        gap: 8px
         width: 100%
+        font-size: 12px 
+        line-height: 14px
