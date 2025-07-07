@@ -229,18 +229,18 @@
         display: none
         padding-bottom: 20px
 
+    &__ic
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        --ic-width: 26px
+
     &-item
         transition: all ease .3s
         margin: 0 auto
         padding: 0
         border-bottom: 1px solid #BEBEBE
-
-        .ic
-            position: absolute
-            top: 50%
-            transform: translateY(-50%)
-            left: 0
-            --ic-width: 26px
 
         &:last-child
             margin-bottom: 0
@@ -249,6 +249,10 @@
 
     &__text
         padding-left: 60px
+        &>*
+            margin-bottom: 10px
+            &:last-child
+                margin-bottom: 0
 
     &__heading
         padding: 20px 0 20px 60px
@@ -267,18 +271,26 @@
     @media screen and ( max-width: 1199px )
         &__heading
             padding: 18px 0 18px 40px
-            .ic
-                --ic-width: 20px
+        &__ic
+            --ic-width: 20px
 
         &__text
             padding-left: 40px
+
     @media screen and ( max-width: 720px )
         &__heading
             padding: 11.5px 0 11.5px 27px
-            .ic
-                --ic-width: 15px
+
+        &__ic
+            --ic-width: 15px
+
         &__text
             padding-left: 27px
+            &>*
+                margin-bottom: 6px
+
+        .btn 
+            width: fit-content
 
 .franchise
     position: relative
@@ -359,18 +371,16 @@
                     display: none
 
     @media screen and ( max-width: 720px )
-        &__descr 
+        &__descr
             max-width: 305px
             margin: 0 auto 6px
-        h2 
+        h2
             max-width: 334px
             margin: 0 auto 20px
 
-        
         &-slide
             width: 114px
-            img 
+            img
                 aspect-ratio: 114/100
-
 
 @import 'footer'

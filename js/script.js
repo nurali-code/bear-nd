@@ -35,7 +35,7 @@ $('.faq__heading').on('click', function () {
     $('.faq__heading').not(this).removeClass('active').next().slideUp(300);
     $(this).find('.ic use').attr('href', 'img/sprite.svg#dec');
     $(this).toggleClass('active').next().slideToggle(300);
-
+    $(this).hasClass('active') ? $(this).find('.ic use').attr('href', 'img/sprite.svg#dec') : $(this).find('.ic use').attr('href', 'img/sprite.svg#inc');
 });
 
 $('.subs-slider').slick({
