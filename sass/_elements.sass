@@ -159,7 +159,7 @@ button
             transform: scaleX(-1)
 
     &.--outline
-        background-color: $black
+        background-color: $alfa
         color: $white
         .ic
             fill: $white
@@ -238,12 +238,21 @@ ul
     &__img
         width: 100%
         object-fit: cover
+
     &>*
         &:first-child
             width: var(--first)
 
         &:last-child
             width: calc( 100% - (var(--first) + var(--gap) ))
+
+    &.--reverce
+        &>*
+            &:first-child
+                width: calc( 100% - (var(--first) + var(--gap) ))
+
+            &:last-child
+                width: var(--first)
 
 label
     display: block

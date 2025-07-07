@@ -224,7 +224,7 @@
                 &-list
                     padding: 0 calc( var(--cont-pad) - 3.5px )
 
-.faq
+.services
     &__ic
         position: absolute
         top: 50%
@@ -252,7 +252,7 @@
             &:last-child
                 margin-bottom: 0
 
-        .btn 
+        .btn
             margin-top: 20px
 
     &__heading
@@ -268,7 +268,7 @@
         &.active
             color: $prime
             opacity: 1
-            .ic 
+            .ic
                 fill: $prime
 
     @media screen and ( max-width: 1199px )
@@ -293,10 +293,67 @@
             &>*
                 margin-bottom: 6px
 
-            .btn 
+            .btn
                 min-width: unset
                 margin-top: 12px
                 width: fit-content
+
+.faq
+    h2 
+        color: $white
+        
+    &-item
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+
+    &__ic
+        position: absolute
+        top: 2px
+        left: 0
+        --ic-width: 16px
+        transform-origin: 50% 50%
+
+    &__heading
+        padding: 0px 0 0px 28px
+        position: relative
+        z-index: 1
+        margin: 0
+        width: 100%
+        text-align: left
+        text-wrap: balance
+        cursor: pointer
+        &.active
+            color: $prime
+            .ic
+                fill: $prime
+                transform: rotate(90deg)
+
+    &__text
+        padding: 10px 0 20px 28px
+        display: none
+        &>*
+            margin-bottom: 6px
+            &:last-child
+                margin-bottom: 0
+
+    &-wrap
+        --gap: 45px
+        gap: var(--gap)
+        &>*
+            width: calc( (100% - var(--gap) ) / 2 )
+
+    @media screen and ( max-width: 1199px )
+        &-wrap 
+            --gap: 25px
+
+    @media screen and ( max-width: 991px )
+        &-wrap 
+            --gap: 10px
+            &>*
+                width: 100%
+    
+
 
 .franchise
     position: relative
