@@ -225,10 +225,6 @@
                     padding: 0 calc( var(--cont-pad) - 3.5px )
 
 .faq
-    &__text
-        display: none
-        padding-bottom: 20px
-
     &__ic
         position: absolute
         top: 50%
@@ -249,10 +245,15 @@
 
     &__text
         padding-left: 60px
+        display: none
+        padding-bottom: 40px
         &>*
             margin-bottom: 10px
             &:last-child
                 margin-bottom: 0
+
+        .btn 
+            margin-top: 20px
 
     &__heading
         padding: 20px 0 20px 60px
@@ -267,6 +268,8 @@
         &.active
             color: $prime
             opacity: 1
+            .ic 
+                fill: $prime
 
     @media screen and ( max-width: 1199px )
         &__heading
@@ -286,11 +289,14 @@
 
         &__text
             padding-left: 27px
+            padding-bottom: 16px
             &>*
                 margin-bottom: 6px
 
-        .btn 
-            width: fit-content
+            .btn 
+                min-width: unset
+                margin-top: 12px
+                width: fit-content
 
 .franchise
     position: relative
