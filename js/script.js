@@ -38,6 +38,33 @@ $('.faq__heading').on('click', function () {
 
 });
 
+$('.subs-slider').slick({
+    arrows: false,
+    // infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    centerMode: true,
+    focusOnSelect: true,
+    swipeToSlide: true,
+    cennterPadding: '0',
+    variableWidth: true,
+    responsive: [
+        {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 720,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+    ]
+});
+
 $('.reviews-slider').slick({
     arrows: false,
     infinite: false,

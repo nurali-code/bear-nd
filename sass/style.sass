@@ -312,24 +312,65 @@
         padding: 60px 0 64px
         margin: 40px 0
 
-        &__descr 
+        &__descr
             max-width: 610px
 
     @media screen and ( max-width: 991px )
-        &__descr 
+        &__descr
             max-width: 510px
-    
+
     @media screen and ( max-width: 720px )
         padding: 32px 0 60px
         margin: 30px 0
-        h2 
+        h2
             max-width: 280px
             margin: 0 auto 20px
-        &__descr 
+        &__descr
             max-width: 270px
             margin-bottom: 40px
 
+.subs
+    text-align: center
+    h2
+        color: $white
+
+    &-slider
+        margin: 0 0 40px
+        &:not(.slick-initialized)
+            &>*:nth-child(n+4)
+                display: none
+
+    &-slide
+        width: 242px
+        margin: 0 5px
+        img
+            width: 100%
+            aspect-ratio: 242/212
+            object-fit: cover
+
+    .btn
+        margin: 0 auto
+
+    @media screen and ( max-width: 991px )
+        &-slider
+            margin: 0 0 40px
+            &:not(.slick-initialized)
+                &>*:nth-child(n+4)
+                    display: none
+
+    @media screen and ( max-width: 720px )
+        &__descr 
+            max-width: 305px
+            margin: 0 auto 6px
+        h2 
+            max-width: 334px
+            margin: 0 auto 20px
+
         
-        
+        &-slide
+            width: 114px
+            img 
+                aspect-ratio: 114/100
+
 
 @import 'footer'
