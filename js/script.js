@@ -1,6 +1,6 @@
 // Меню бургер
 $('.btn__menu, .nav__link').on('click', function () {
-    window.innerWidth < 11199.99 ? $('.header .nav, body, .btn__menu').toggleClass('active') : '';
+    window.innerWidth < 1199 ? $('.header .nav, body, .btn__menu').toggleClass('active') : '';
 });
 
 function animateNumber(element, to, duration = 2000) {
