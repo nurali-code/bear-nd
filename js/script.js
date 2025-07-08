@@ -32,10 +32,15 @@ scrollChatToBottom();
 // services аккордеон
 $('.services__heading').on('click', function () {
     $('.services__heading').not(this).removeClass('active').next().slideUp(300);
-    $(this).find('.ic use').attr('href', 'img/sprite.svg#dec');
+    $('.services__heading').not(this).find('.ic use').attr('href', 'img/sprite.svg#inc');
     $(this).toggleClass('active').next().slideToggle(300);
-    $(this).hasClass('active') ? $(this).find('.ic use').attr('href', 'img/sprite.svg#dec') : $(this).find('.ic use').attr('href', 'img/sprite.svg#inc');
+    if ($(this).hasClass('active')) {
+        $(this).find('.ic use').attr('href', 'img/sprite.svg#dec');
+    } else {
+        $(this).find('.ic use').attr('href', 'img/sprite.svg#inc');
+    }
 });
+
 // faq аккордеон
 $('.faq__heading').on('click', function () {
     $('.faq__heading').not(this).removeClass('active').next().slideUp(300);
