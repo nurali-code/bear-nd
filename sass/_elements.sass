@@ -202,6 +202,8 @@ button
             &::before
                 opacity: 1
                 transform: scale(1) translate(-50%, 20px)
+            &::after
+                background-color: $prime !important
 
     &.--outline
         background-color: $alfa
@@ -422,3 +424,22 @@ section
         width: 100%
         font-size: 12px
         line-height: 14px
+        &-line
+            &::after
+                content: ''
+                display: block
+                transition: .3s ease all
+                background-color: $white
+                width: var(--cont-pad)
+                height: 1px
+                position: absolute
+                top: 50%
+                right: 100%
+                transform: translateY(19px)
+
+        &-wrap
+            .container
+                .btn-line
+                    &::after
+                        left: 0
+                        right: auto
