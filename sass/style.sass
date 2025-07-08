@@ -227,8 +227,12 @@
 .referal
     position: relative
     z-index: 1
-    padding: 61px 0 45px
-    margin: 50px 0
+    padding: var(--padd) 0
+    margin: 30px 0
+    .container 
+        padding-top: 61px 
+        padding-bottom: 45px
+    
     &-features
         gap: 78px
         max-width: calc( 100% - 230px )
@@ -293,54 +297,62 @@
             font-weight: 700
             font-size: 14px
             line-height: 100%
+            &:active,
+            &:hover
+                color: $prime
+                .ic
+                    fill: $prime
 
     @media screen and ( max-width: 991px )
+        --padd: 10px            
+
         &__subheading
             margin-bottom: 20px
 
-        &-features 
+        &-features
             gap: 40px 78px
 
         &-feature
-            &__heading 
-                img 
-                    max-width: 60px 
+            &__heading
+                img
+                    max-width: 60px
 
-            &__text 
+            &__text
                 font-size: 16px
 
     @media screen and ( max-width: 720px )
-        padding: 23px 0 32px
-        margin: 30px 0
+        margin: 20px 0
+        .container 
+            padding-top: 21px 
+            padding-bottom: 32px
+
         &-title
             order: 1
             width: 100%
             margin-bottom: 40px
 
-        &-btns 
+        &-btns
             width: 100%
             max-width: 100%
             order: 2
             margin: 0 0 50px
 
-        &-links 
+        &-links
             order: 4
 
-        &-features 
+        &-features
             order: 3
             max-width: 400px
             margin: 0 0 46px
 
         &-feature
-            &__text 
+            &__text
                 max-width: 180px
-                font-size: 12px    
+                font-size: 12px
 
-        &-links 
-            &__link 
-                font-size: 12px    
-
-        
+        &-links
+            &__link
+                font-size: 12px
 
 .services
     &__ic
