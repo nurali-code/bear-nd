@@ -29,7 +29,7 @@ function scrollChatToBottom() {
 scrollChatToBottom();
 
 
-// services аккордеон
+// services аккордеон   
 $('.services__heading').on('click', function () {
     $('.services__heading').not(this).removeClass('active').next().slideUp(300);
     $('.services__heading').not(this).find('.ic use').attr('href', 'img/sprite.svg#inc');

@@ -224,6 +224,65 @@
                 &-list
                     padding: 0 calc( var(--cont-pad) - 3.5px )
 
+.referal
+    position: relative
+    z-index: 1
+    padding: 61px 0 45px
+    margin: 50px 0
+    &-features
+        gap: 78px
+        max-width: calc( 100% - 230px )
+        margin-bottom: 18.5vw
+
+    &-feature
+        max-width: 252px
+        &__heading
+            font-family: 'Philosopher', serif
+            font-weight: 700
+            font-size: 60px
+            line-height: 100%
+            text-transform: uppercase
+
+        &__text
+            display: block
+            font-size: 20px
+            text-wrap: balance
+            line-height: 100%
+
+    &-title 
+        width: 100%
+
+    h2 
+        margin: 0
+        color: $white
+        font-weight: 600
+
+    &__subheading
+        font-weight: 600
+        margin: 0 0 40px
+        color: $prime
+
+    &-btns 
+        gap: 14px
+        margin-bottom: 18.5vw
+        max-width: 230px
+
+    &__descr
+        max-width: 504px
+        font-weight: 600
+
+    &__bg
+        display: block
+        position: absolute
+        top: var(--padd)
+        z-index: -111
+        left: var(--padd)
+        width: calc( 100% - var(--padd) * 2 )
+        height: 100%
+        z-index: -1
+        object-fit: cover
+        pointer-events: none
+
 .services
     &__ic
         position: absolute
@@ -299,9 +358,9 @@
                 width: fit-content
 
 .faq
-    h2 
+    h2
         color: $white
-        
+
     &-item
         margin-bottom: 10px
         &:last-child
@@ -344,16 +403,14 @@
             width: calc( (100% - var(--gap) ) / 2 )
 
     @media screen and ( max-width: 1199px )
-        &-wrap 
+        &-wrap
             --gap: 25px
 
     @media screen and ( max-width: 991px )
-        &-wrap 
+        &-wrap
             --gap: 10px
             &>*
                 width: 100%
-    
-
 
 .franchise
     position: relative
