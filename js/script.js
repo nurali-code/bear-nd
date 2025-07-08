@@ -6,19 +6,27 @@ $('.btn__menu, .nav__link').on('click', function () {
 function animateNumber(element, to, duration = 2000) {
     let start = 0;
     let startTime = null;
+    // Сохраняем любые нечисловые символы (например, пробелы, +)
+    const originalText = $(element).text();
+    const match = originalText.match(/^(\D*)\s*([\d\s]+)\s*(\D*)$/);
+    const prefix = match ? match[1] : '';
+    const suffix = match ? match[3] : '';
 
     function animate(currentTime) {
         if (!startTime) startTime = currentTime;
         const progress = Math.min((currentTime - startTime) / duration, 1);
         const value = Math.floor(progress * (to - start) + start);
-        $(element).text(value.toLocaleString('ru-RU'));
+        // Форматируем число с пробелами как в оригинале
+        const formatted = value.toLocaleString('ru-RU');
+        $(element).text(`${prefix}${formatted}${suffix}`);
         if (progress < 1) { requestAnimationFrame(animate); }
     }
     requestAnimationFrame(animate);
 }
 
-$('.hero__item-num').each(function () {
-    const n = parseInt($(this).data('anim'), 10);
+$('[data-anim]').each(function () {
+    // Извлекаем только число из текста, игнорируя пробелы и символы
+    const n = parseInt($(this).text().replace(/[^\d]/g, ''), 10);
     animateNumber(this, n, 2000);
 });
 
