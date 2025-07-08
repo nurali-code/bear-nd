@@ -92,7 +92,7 @@ a, button, p, ul, ol
     letter-spacing: calc( var(--fz) * -0.02 )
     color: $white
 
-.--ext 
+.--ext
     text-decoration: underline
 
 .ic
@@ -147,6 +147,45 @@ button
     .--arrow
         margin-left: auto
 
+    &-wrap
+        padding: 40px 0 0
+        position: relative
+        // overflow: hidden
+        z-index: 1
+        gap: 40px
+        flex-direction: row-reverse
+        .btn
+            width: fit-content !important
+
+        .--outline
+            background-color: $bg !important
+
+        .container
+            gap: 40px
+            flex-direction: row-reverse
+
+    &-line
+        display: block
+        flex: 1
+        height: 1px
+        background-color: $white
+        max-width: 712px
+        transition: all .3s ease
+        &::before
+            content: ''
+            display: block
+            width: 200vw
+            top: 50%
+            left: 50%
+            transform: translate(-100%, 20px) scale(0)
+            margin-top: -.5px
+            height: 1px
+            z-index: -1
+            position: absolute
+            background-color: $prime
+            opacity: 0
+            transition: all .3s ease
+
     &:active,
     &:hover
         border-color: $prime
@@ -157,6 +196,12 @@ button
 
         .--arrow
             transform: scaleX(-1)
+
+        & ~ .btn-line
+            background-color: $prime
+            &::before
+                opacity: 1
+                transform: scale(1) translate(-50%, 20px)
 
     &.--outline
         background-color: $alfa
@@ -238,6 +283,8 @@ ul
     &__img
         width: 100%
         object-fit: cover
+        position: relative
+        z-index: 111
 
     &>*
         &:first-child
@@ -341,6 +388,12 @@ section
         &>*
             &:first-child
 
+    .btn
+        &-wrap
+            gap: 30px
+            .container
+                gap: 30px
+
 @media screen and ( max-width: 720px )
     .wrapper
         display: block
@@ -367,5 +420,5 @@ section
     .btn
         gap: 8px
         width: 100%
-        font-size: 12px 
+        font-size: 12px
         line-height: 14px
