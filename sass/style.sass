@@ -30,7 +30,6 @@
             font-weight: 700
             font-size: 60px
             line-height: 100%
-            text-transform: uppercase
 
         &__text
             font-weight: 600
@@ -229,10 +228,10 @@
     z-index: 1
     padding: var(--padd) 0
     margin: 30px 0
-    .container 
-        padding-top: 61px 
+    .container
+        padding-top: 61px
         padding-bottom: 45px
-    
+
     &-features
         gap: 78px
         max-width: calc( 100% - 230px )
@@ -304,7 +303,7 @@
                     fill: $prime
 
     @media screen and ( max-width: 991px )
-        --padd: 10px            
+        --padd: 10px
 
         &__subheading
             margin-bottom: 20px
@@ -322,8 +321,8 @@
 
     @media screen and ( max-width: 720px )
         margin: 20px 0
-        .container 
-            padding-top: 21px 
+        .container
+            padding-top: 21px
             padding-bottom: 32px
 
         &-title
@@ -402,7 +401,7 @@
                 fill: $prime
 
     .btn
-        &-wrap 
+        &-wrap
             margin-top: 30px
 
     @media screen and ( max-width: 1199px )
@@ -436,40 +435,28 @@
     h2
         color: $white
 
-    &-item
+    &__link
+        position: relative
+        z-index: 1
+        margin: 0
+        padding: 0
+        width: 100%
+        text-align: left
+        text-wrap: balance
+        gap: 12px
+
+        font-size: 14px
+        line-height: 20px
+        font-weight: 300
         margin-bottom: 10px
         &:last-child
             margin-bottom: 0
 
-    &__ic
-        position: absolute
-        top: 2px
-        left: 0
-        --ic-width: 16px
-        transform-origin: 50% 50%
-
-    &__heading
-        padding: 0px 0 0px 28px
-        position: relative
-        z-index: 1
-        margin: 0
-        width: 100%
-        text-align: left
-        text-wrap: balance
-        cursor: pointer
-        &.active
+        &:hover,
+        &:active
             color: $prime
             .ic
                 fill: $prime
-                transform: rotate(90deg)
-
-    &__text
-        padding: 10px 0 20px 28px
-        display: none
-        &>*
-            margin-bottom: 6px
-            &:last-child
-                margin-bottom: 0
 
     &-wrap
         --gap: 45px
@@ -486,6 +473,12 @@
             --gap: 10px
             &>*
                 width: 100%
+
+    @media screen and ( max-width: 991px )
+        &__link
+            gap: 10px
+            font-size: 12px
+            line-height: 15px
 
 .franchise
     position: relative

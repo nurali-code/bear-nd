@@ -92,9 +92,6 @@ a, button, p, ul, ol
     letter-spacing: calc( var(--fz) * -0.02 )
     color: $white
 
-.--ext
-    text-decoration: underline
-
 .ic
     --ic-width: 16px
     transition: all ease .3s
@@ -170,21 +167,21 @@ button
         height: 1px
         background-color: $white
         max-width: 712px
-        transition: all .3s ease
+        transition: all .4s ease
         &::before
             content: ''
             display: block
             width: 200vw
             top: 50%
             left: 50%
-            transform: translate(-100%, 20px) scale(0)
+            transform: translate(-100%, 20px)
             margin-top: -.5px
             height: 1px
             z-index: -1
             position: absolute
             background-color: $prime
             opacity: 0
-            transition: all .3s ease
+            transition: all .4s ease
 
     &:active,
     &:hover
@@ -201,7 +198,7 @@ button
             background-color: $prime
             &::before
                 opacity: 1
-                transform: scale(1) translate(-50%, 20px)
+                transform: translate(-50%, 20px)
             &::after
                 background-color: $prime !important
 
@@ -428,7 +425,7 @@ section
             &::after
                 content: ''
                 display: block
-                transition: .3s ease all
+                transition: .4s ease all
                 background-color: $white
                 width: var(--cont-pad)
                 height: 1px
@@ -443,7 +440,7 @@ section
                     &::after
                         left: 0
                         right: auto
-ß
+
 [data-anim]
     font-variant-numeric: tabular-nums
     font-feature-settings: "tnum" 
