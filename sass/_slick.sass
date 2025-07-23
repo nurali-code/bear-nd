@@ -5,7 +5,7 @@
         position: relative
         // overflow: hidden
         display: flex
-        
+
         margin: 0
         padding: 0
 
@@ -18,7 +18,7 @@
 
     &-slider
         position: relative
-        overflow: hidden
+        // overflow: hidden
         display: block
         box-sizing: border-box
         -webkit-touch-callout: none
@@ -74,7 +74,6 @@
         &.slick-loading img
             display: none
 
-
         &.dragging img
             pointer-events: none
 
@@ -90,4 +89,46 @@
 
     &-arrow
         color: rgba(0, 0, 0, 0)
-        
+        width: 52px
+        z-index: 111
+        height: 52px
+        border-radius: 50%
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        box-shadow: 0px 2px 18px 2px #0000000A
+        // position: absolute
+        // bottom: 100%
+        // right: 31px
+        &.slick-disabled
+            opacity: .2
+
+    &-next
+        background-image: url('../img/arrow-r.svg')
+
+    &-prev
+        background-image: url('../img/arrow-l.svg')
+        right: 93px
+
+    &-dots
+        z-index: 111
+        display: flex
+        align-items: center
+        // position: absolute
+        gap: 10px
+        // height: 52px
+        // bottom: 100%
+        // right: 229px
+        li
+            line-height: 0
+            font-size: 0
+            color: rgba(0, 0, 0, 0)
+            background-color: #18274E
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            line-height: 0
+            opacity: .2
+
+            &.slick-active
+                opacity: 1

@@ -6,14 +6,14 @@
     outline: none
 
 :root
-    --prime: #FF3700
+    --prime: #18274E
     --main: #3D1000
     --white: #fff
     --black: #000
     --dark: #111111
     --green: #25A163
     --red: #E61717
-    --bg: #111111
+    --bg: #fff
     --fz: 1.25rem
     --cont: 1320px
     --cont-pad: 20px
@@ -38,11 +38,8 @@ body, html
     font-style: normal
     font-optical-sizing: auto
     background-color: $bg
-    color: $white
-    @media screen and ( max-width: 1100px )
-        &.tab_active
-            overflow: hidden
-
+    color: $black
+    
 body
     min-height: 100vh
     position: relative
@@ -64,42 +61,12 @@ h1, h2
     font-weight: 700
     margin: 0 0 20px
 
-h3,.h3
-    font-weight: 600
-    font-size: 28px
-    line-height: 115%
-    margin: 0 0 20px
-
-h1,.h1
-    font-weight: 700
-    font-size: 60px
-    line-height: 113%
-    text-transform: uppercase
-
-h2,.h2
-    font-weight: 700
-    font-size: 40px
-    line-height: 100%
-    color: $prime
-    text-transform: uppercase
-    margin: 0 0 45px
-
 a, button, p, ul, ol
     font-family: inherit
     font-weight: 600
     font-size: var(--fz)
     line-height: 130%
     letter-spacing: calc( var(--fz) * -0.02 )
-    color: $white
-
-.ic
-    --ic-width: 16px
-    transition: all ease .3s
-    min-width: var(--ic-width)
-    width: var(--ic-width)
-    height: var(--ic-width)
-    fill: $white
-    display: inline-block
 
 p
     font-weight: 300
@@ -122,127 +89,6 @@ button
     &:active
         opacity: 1
         transform: scale(.98)
-
-.btn
-    font-weight: 700
-    font-size: 14px
-    line-height: 16px
-    vertical-align: middle
-
-    text-align: left
-    color: $black
-    gap: 14px
-    min-width: 230px
-    width: fit-content
-    padding: 10px
-    background-color: $white
-    border: 1px solid $white
-    .ic
-        fill: $black
-        transition: all .3s ease
-
-    .--arrow
-        margin-left: auto
-
-    &-wrap
-        padding: 40px 0 0
-        position: relative
-        // overflow: hidden
-        z-index: 1
-        gap: 40px
-        flex-direction: row-reverse
-        .btn
-            width: fit-content !important
-
-        .--outline
-            background-color: $bg !important
-
-        .container
-            gap: 40px
-            flex-direction: row-reverse
-
-    &-line
-        display: block
-        flex: 1
-        height: 1px
-        background-color: $white
-        max-width: 712px
-        transition: all .4s ease
-        &::before
-            content: ''
-            display: block
-            width: 200vw
-            top: 50%
-            left: 50%
-            transform: translate(-100%, 20px)
-            margin-top: -.5px
-            height: 1px
-            z-index: -1
-            position: absolute
-            background-color: $prime
-            opacity: 0
-            transition: all .4s ease
-
-    &:active,
-    &:hover
-        border-color: $prime
-        background-color: $prime
-        color: $white
-        .ic
-            fill: $white
-
-        .--arrow
-            transform: scaleX(-1)
-
-        & ~ .btn-line
-            background-color: $prime
-            &::before
-                opacity: 1
-                transform: translate(-50%, 20px)
-            &::after
-                background-color: $prime !important
-
-    &.--outline
-        background-color: $alfa
-        color: $white
-        .ic
-            fill: $white
-        &:active,
-        &:hover
-            color: $prime
-            .ic
-                fill: $prime
-
-    &.--outline-bottom
-        background-color: $alfa
-        border:
-            top: none
-            left: none
-            right: none
-
-        color: $white
-        .ic
-            fill: $white
-        &:active,
-        &:hover
-            color: $prime
-            .ic
-                fill: $prime
-
-    &.--white-out
-        &:active,
-        &:hover
-            background-color: $black
-            color: $prime
-            .ic
-                fill: $prime
-
-    &:disabled
-        background-color: #E7E7F0
-        cursor: progress
-
-.w-full
-    width: 100% !important
 
 ul
     list-style: none

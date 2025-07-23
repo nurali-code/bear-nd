@@ -1,574 +1,171 @@
 @import 'normolize'
 @import 'elements'
 @import 'slick'
-@import 'header'
 
-.hero
-    position: relative
-    z-index: 1
-    padding: var(--padd)
-    margin: 0 0 50px
-    .container
-        gap: 90px 20px
-        padding-top: 22px
-        padding-bottom: 22px
-        min-height: calc( 100svh - var(--padd) * 2 )
-
-    .header
-        margin-bottom: auto
-
-    &-features
-        gap: 78px
-        max-width: 59%
-        margin-bottom: 5vw
-
-    &-feature
-        white-space: nowrap
-        &__heading
-            display: block
-            font-family: 'Philosopher', serif
-            font-weight: 700
-            font-size: 60px
-            line-height: 100%
-
-        &__text
-            font-weight: 600
-            font-size: 24px
-            line-height: 100%
-
-    &-descr
-        max-width: 41%
-        text-align: right
-        margin-bottom: 5vw
-        p
-            margin-bottom: 20px
-
-        .btn
+.timeline
+    margin: 0 auto
+    overflow: hidden
+    padding-top: 100px
+    &-row
+        display: flex
+        margin-bottom: 114px
+        padding: 0 31px
+        .half
+            gap: 40px
+            display: flex
+            width: 100%
+            max-width: 63%
             margin-left: auto
 
-    h1
-        max-width: 1149px
-        margin: auto 0 0
-
-    &__bg
-        display: block
-        position: absolute
-        top: var(--padd)
-        z-index: -111
-        left: var(--padd)
-        width: calc( 100% - var(--padd) * 2 )
-        height: calc( 100% - var(--padd) * 2 )
-        z-index: -1
-        object-fit: cover
-
-    @media (max-width: 1439px)
-        &-features,
-        &-descr
-            margin-bottom: 0
-
-    @media (max-width: 1199px)
-        .container
-            align-items: flex-end
-
-        &-features
-            margin-bottom: 10vw
-            gap: 40px
-            max-width: 40%
-
-        &-feature
-            &__heading
-                font-size: 50px
-            &__text
-                font-size: 22px
-
-        &-descr
-            margin-bottom: 10vw
-            max-width: 50%
-
-        h1
-            max-width: 980px
-
-    @media (max-width: 991px)
-        .container
-            gap: 56px 0
-            flex-direction: column
-            &>*
-                width: 100%
-                max-width: 100%
-                text-align: left
-
-        .header
-            order: 1
-
-        &__bg
-            // object-position: right center
-
-        &-features
-            order: 2
-            margin-bottom: 0
-            gap: 20px 40px
-
-        &-feature
-            &__heading
-                font-size: 40px
-            &__text
-                font-size: 18px
-
-        h1
-            order: 3
-            margin: 0
-
-        &-descr
-            margin: auto
-            order: 4
-            margin-bottom: 0
-            .btn
-                margin-left: 0
-
-    @media (max-width: 720px)
-        margin-bottom: 70px
-        .container
-            width: calc( 100% - 18px )
-            min-height: 590px
-
-            &>*
-                padding: 0 11px
-
-        &-feature
-            &__heading
-                font-size: 28px
-
-            &__text
-                font-size: 12px
-
-        &-descr
-            p
-                font-size: 12px
-                line-height: 16px
-                margin-bottom: 30px
-
-            .btn
-                width: 100%
-
-.about
-    h3
-        max-width: 590px
-        font-weight: 400
-
-    .wrapper
-        &>*
-            &:last-child
-                max-width: 670px
-
-.reviews
-    &-title
-        gap: 2px 20px
-        margin-bottom: 20px
-        &>*
-            margin: 0
-
-    h2
-        color: $white
-
-    h3
-        color: $prime
-
-    &-slider
-        width: calc((100vw - var(--cont)) / 2 + 100%)
-        &:not(.slick-initialized)
-            gap: 10px
-            &>*:nth-child(n+4)
-                display: none
-
-    &-slide
-        width: 316px
-        border: 1px solid white
-        padding: 30px
-        margin: 0 5px
-        &>*
-            width: 100%
-
-        &:nth-child(even)
-            border: none
-            background-color: $main
-
-    &__text
-        margin: 0 0 10px
-
-    &__name
-        font-weight: bold
-
-    @media screen and ( max-width: 1300px )
-        &-slider
-            width: calc(100% + var(--cont-pad) )
-
-    @media screen and ( max-width: 991px )
-
-        &-slide
-            // width: 208px
-            padding: 21px 19px
-
-    @media screen and ( max-width: 720px )
-        &-slide
-            margin: 0 3.5px
-            width: 60vw
-            max-width: 300px
-
-        &-slider
-            position: relative
-            z-index: 1
-            left: calc( 0px - var(--cont-pad) )
-            width: calc(100% + var(--cont-pad) * 2 )
-            .slick
-                &-list
-                    padding: 0 calc( var(--cont-pad) - 3.5px )
-
-.referal
-    position: relative
-    z-index: 1
-    padding: var(--padd) 0
-    margin: 30px 0
-    .container
-        padding-top: 61px
-        padding-bottom: 45px
-
-    &-features
-        gap: 78px
-        max-width: calc( 100% - 230px )
-        margin-bottom: 18.5vw
-
-    &-feature
-        max-width: 252px
-        &__heading
-            font-family: 'Philosopher', serif
-            font-weight: 700
-            font-size: 60px
-            line-height: 100%
-            text-transform: uppercase
-
-        &__text
-            display: block
-            font-size: 20px
-            text-wrap: balance
-            line-height: 100%
-
-    h2
-        margin: 0
-        color: $white
-
-    &__subheading
-        font-weight: 600
-        margin: 0 0 40px
-        color: $prime
-
-    &-btns
-        gap: 14px
-        margin-bottom: 18.5vw
-        max-width: 230px
-
-    &__descr
-        max-width: 504px
-        text-wrap: balance
-        font-weight: 600
-        margin: 0
-
-    &__bg
-        display: block
-        position: absolute
-        top: var(--padd)
-        z-index: -111
-        left: var(--padd)
-        width: calc( 100% - var(--padd) * 2 )
-        height: 100%
-        z-index: -1
-        object-fit: cover
-        pointer-events: none
-
-    &-title
-        width: 70%
-
-    &-links
-        gap: 4px
-        align-self: flex-end
+    &-controls
+        display: flex
+        align-items: center
+        gap: 10px
         margin-left: auto
-        &__link
-            gap: 10px
-            font-weight: 700
-            font-size: 14px
-            line-height: 100%
-            &:active,
-            &:hover
-                color: $prime
-                .ic
-                    fill: $prime
 
-    @media screen and ( max-width: 991px )
-        --padd: 10px
-
-        &__subheading
-            margin-bottom: 20px
-
-        &-features
-            gap: 40px 78px
-
-        &-feature
-            &__heading
-                img
-                    max-width: 60px
-
-            &__text
-                font-size: 16px
-
-    @media screen and ( max-width: 720px )
-        margin: 20px 0
-        .container
-            padding-top: 21px
-            padding-bottom: 32px
-
-        &-title
-            order: 1
-            width: 100%
-            margin-bottom: 40px
-
-        &-btns
-            width: 100%
-            max-width: 100%
-            order: 2
-            margin: 0 0 50px
-
-        &-links
-            order: 4
-
-        &-features
-            order: 3
-            max-width: 400px
-            margin: 0 0 46px
-
-        &-feature
-            &__text
-                max-width: 180px
-                font-size: 12px
-
-        &-links
-            &__link
-                font-size: 12px
-
-.services
-    &__ic
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        left: 0
-        --ic-width: 26px
-
-    &-item
-        transition: all ease .3s
-        margin: 0 auto
-        padding: 0
-        border-bottom: 1px solid #BEBEBE
-
-        &:last-child
-            margin-bottom: 0
-
-        &.active
-
-    &__text
-        padding-left: 60px
-        display: none
-        padding-bottom: 40px
-        &>*
-            margin-bottom: 10px
-            &:last-child
-                margin-bottom: 0
-
-        .btn
-            margin-top: 20px
+        .slick
+            &-dots
+                margin-right: 74px
 
     &__heading
-        padding: 20px 0 20px 60px
+        font-weight: 500
+        font-size: 44px
+        line-height: 110%
+        margin: 0
+
+    &__text
+        font-weight: 500
+        font-size: 16px
+        line-height: 140%
+        opacity: 0
+        transition: .3s ease all
+
+    &-item
         position: relative
         z-index: 1
         margin: 0
-        width: 100%
-        text-align: left
-        text-wrap: balance
-        cursor: pointer
+        display: flex
+        align-items: flex-end
+        min-height: 360px
+        width: 426px
+        padding-bottom: 143px
 
-        &.active
-            color: $prime
-            opacity: 1
-            .ic
-                fill: $prime
+        background-repeat: repeat-x
+        background-position: bottom left
+        background-image: url('../img/lines.svg')
 
-    .btn
-        &-wrap
-            margin-top: 30px
-
-    @media screen and ( max-width: 1199px )
-        &__heading
-            padding: 18px 0 18px 40px
-        &__ic
-            --ic-width: 20px
-
-        &__text
-            padding-left: 40px
-
-    @media screen and ( max-width: 720px )
-        &__heading
-            padding: 11.5px 0 11.5px 27px
-
-        &__ic
-            --ic-width: 15px
-
-        &__text
-            padding-left: 27px
-            padding-bottom: 16px
-            &>*
-                margin-bottom: 6px
-
-            .btn
-                min-width: unset
-                margin-top: 12px
-                width: fit-content
-
-.faq
-    h2
-        color: $white
-
-    &__link
-        position: relative
-        z-index: 1
-        margin: 0
-        padding: 0
-        width: 100%
-        text-align: left
-        text-wrap: balance
-        gap: 12px
-
-        font-size: 14px
-        line-height: 20px
-        font-weight: 300
-        margin-bottom: 10px
+        background-image: url('../img/line-ac.svg'), url('../img/lines.svg')
+        background-position: bottom left
+        background-repeat: no-repeat, repeat-x
+        &:first-child,
         &:last-child
-            margin-bottom: 0
+            &::before
+                content: ''
+                width: 50vw
+                height: 100%
+                position: absolute
+                bottom: 0
+                right: 100%
+                background-repeat: repeat-x
+                background-position: bottom right
+                background-image: url('../img/lines.svg')
 
-        &:hover,
-        &:active
-            color: $prime
-            .ic
-                fill: $prime
+        &:last-child
+            &::before
+                right: auto
+                left: 100%
+                background-position: bottom left
 
-    &-wrap
-        --gap: 45px
-        gap: var(--gap)
-        &>*
-            width: calc( (100% - var(--gap) ) / 2 )
+        &.slick-current
+            .timeline
+                &__text
+                    opacity: 1
+                    transform: translateY(0%)
 
-    @media screen and ( max-width: 1199px )
-        &-wrap
-            --gap: 25px
+    &__subheading
+        font-weight: 400
+        font-size: 20px
+        line-height: 140%
+        margin: 0
+        transition: .3s ease all
 
-    @media screen and ( max-width: 991px )
-        &-wrap
-            --gap: 10px
-            &>*
-                width: 100%
+    &-images
+        width: 100%
+        .slick
+            &-list
+                padding: 0 !important
+            &-track
+                padding: 0 !important
 
-    @media screen and ( max-width: 991px )
-        &__link
-            gap: 10px
-            font-size: 12px
-            line-height: 15px
-
-.franchise
-    position: relative
-    z-index: 1
-    text-align: center
-    padding: 70px 0 74px
-    margin: 50px 0
-    h2
-        margin-bottom: 20px
-
-    &__descr
-        max-width: 710px
-        margin: 0 auto 40px
-
-    &__bg
-        display: block
-        position: absolute
-        top: var(--padd)
-        z-index: -111
-        left: var(--padd)
-        width: calc( 100% - var(--padd) * 2 )
-        height: 100%
-        z-index: -1
-        object-fit: cover
-        pointer-events: none
-
-    .btn
-        margin: 0 auto
-
-    @media screen and ( max-width: 1199px )
-        padding: 60px 0 64px
-        margin: 40px 0
-
-        &__descr
-            max-width: 610px
-
-    @media screen and ( max-width: 991px )
-        &__descr
-            max-width: 510px
-
-    @media screen and ( max-width: 720px )
-        padding: 32px 0 60px
-        margin: 30px 0
-        h2
-            max-width: 280px
-            margin: 0 auto 20px
-        &__descr
-            max-width: 270px
-            margin-bottom: 40px
-
-.subs
-    text-align: center
-    h2
-        color: $white
-
-    &-slider
-        margin: 0 0 40px
-        &:not(.slick-initialized)
-            &>*:nth-child(n+4)
-                display: none
-
-    &-slide
-        width: 242px
-        margin: 0 5px
+    &-img
+        margin: 0
+        width: 100%
         img
             width: 100%
-            aspect-ratio: 242/212
-            object-fit: cover
+            display: block
 
-    .btn
-        margin: 0 auto
+    @media screen and ( min-width: 1101px )
+        &__text
+            position: absolute
+            left: 80%
+            width: 364px
+            transform: translateY(10%)
+            top: 0
 
-    @media screen and ( max-width: 991px )
-        &-slider
-            margin: 0 0 40px
-            &:not(.slick-initialized)
-                &>*:nth-child(n+4)
-                    display: none
+        &-item
+            &.slick-current
+                background-image: url('../img/line-big.svg'), url('../img/lines.svg')
+                .timeline
+                    &__subheading
+                        color: #72A811
+                        font-weight: 400
+                        font-size: 128px
+                        line-height: 78%
+                        transform: translateY(-100%)
+                        padding-left: 33px
 
-    @media screen and ( max-width: 720px )
-        &__descr
-            max-width: 305px
-            margin: 0 auto 6px
-        h2
-            max-width: 334px
-            margin: 0 auto 20px
+                    &__text
+                        opacity: 1
+                        transform: translateY(0%)
 
-        &-slide
-            width: 114px
+    @media screen and ( max-width: 1100px )
+        &-row
+            display: block
+            margin-bottom: 20px
+            .half
+                max-width: 100%
+                display: block
+
+        &-item
+            display: block
+            width: 100%
+            min-height: unset
+            padding: 0 16px 130px
+
+        &__subheading
+            text-align: center
+            width: 100%
+            color: #72A811
+            font-size: 60px
+            line-height: 78%
+
+        &__text
+            margin-bottom: 50px
+
+        .slick
+            &-list 
+                padding: 0 !important
+            &-next
+                position: absolute
+                right: 20px
+                top: 50%
+                transform: translateY(-50%)
+            &-dots
+                display: none
+
+        &-img
             img
-                aspect-ratio: 114/100
-
-@import 'footer'
+                aspect-ratio: 360/201
+                object-fit: cover
+                object-position: center center
+                aspect-ratio: 16/9
